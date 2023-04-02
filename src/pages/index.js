@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import Layout from "@/components/Layout";
+import Layout from "@/components/layout/Layout";
 
 export default function Home() {
   return (
@@ -10,7 +10,6 @@ export default function Home() {
         description={"Website about selling guitars, blogs of music and more"}
       >
         <h1>Hola Mundo Next</h1>
-        <Link href="/aboutUs">About us</Link>
       </Layout>
     </>
   );

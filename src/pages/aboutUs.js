@@ -1,5 +1,4 @@
-import Layout from "@/components/Layout"
-import Link from "next/link"
+import Layout from "@/components/layout/Layout"
 
 const AboutUs = () => {
   return (
@@ -9,7 +8,6 @@ const AboutUs = () => {
        description={"About us, GuitarLA, online website for selling music"}
    >
     <h1>About Us</h1>
-    <Link href={"/"}>Home</Link>
    </Layout>
    </>
   )
