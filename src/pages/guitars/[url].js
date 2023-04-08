@@ -41,7 +41,7 @@ export async function getStaticPaths(){
                 url: guitarra.attributes.url
             }
         }))
-        console.log('guitarra paths', paths)
+      
         return {
             paths,
             fallback:false
@@ -55,7 +55,6 @@ export async function getStaticProps({params: {url}}){
    try {
     const respuesta = await fetch(`${process.env.API_URl}/api/guitarras?filters[url]=${url}&populate=image`)
     const {data: guitar} = await respuesta.json()
-    console.log(guitar)
     return {
         props: {guitar}
     }
