@@ -24,19 +24,22 @@ const Header = () => {
             className={router.pathname === "/aboutUs" ? styles.active : ''}
             href="/aboutUs"
           >
-            About us
+            About
           </Link>
           <Link
             className={router.pathname === "/shop" ? styles.active : ''}
             href="/shop"
           >
-            Shop Now
+            Shop
           </Link>
           <Link
             className={router.pathname === "/blog" ? styles.active : ''}
             href="/blog"
           >
-            Music Blog
+            Blog
+          </Link>
+          <Link href={"/cart"} >
+            <Image src={"/img/carrito.png"}  alt="cart image" width={30} height={30}/>
           </Link>
         </nav>
       </div>

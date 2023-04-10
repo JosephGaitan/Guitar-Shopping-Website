@@ -1,5 +1,5 @@
-import Head from "next/head";
 import Link from "next/link";
+import Head from "next/head";
 import Posts from "@/components/fromApi/posts";
 import Layout from "@/components/layout/Layout";
 import styles from "../styles/grid.module.css"

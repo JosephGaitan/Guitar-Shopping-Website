@@ -23,6 +23,7 @@
     margin-top: 5rem;
     display: flex;
     gap: 1rem;
+    align-items: center;
     
 }
 .navegacion a {
