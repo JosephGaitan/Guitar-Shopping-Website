@@ -19,6 +19,7 @@
     padding: 3rem 0;
     border-bottom: 1px solid #cfcfcd;
     margin: 0 2rem;
+    position: relative;
 }   
 .item:last-of-type{
     border: none;
@@ -58,4 +59,18 @@
     margin: 1rem 0;
     width: 70%;
     margin-bottom: 2rem;
+}
+.eliminar{
+    all: unset;
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    font-weight: 900;
+    transition-property: color;
+    transition-duration: 300ms;
+    font-size: 2.5rem;
+}
+.eliminar:hover{
+    cursor: pointer;
+    color: red;
 }

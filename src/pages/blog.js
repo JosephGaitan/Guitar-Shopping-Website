@@ -4,10 +4,11 @@ import Posts from "@/components/fromApi/posts";
 import Layout from "@/components/layout/Layout";
 import styles from "../styles/grid.module.css"
 
-export default function Blog({posts}) {
+export default function Blog({posts, cart}) {
   return (
     <>
       <Layout 
+      cart={cart}
         title={"Blog"}
         description={"How to learn to play, best guitars, how to change your guitar, advises, tips, GuitarLA"}
       >

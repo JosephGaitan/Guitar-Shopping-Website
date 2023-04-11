@@ -1,11 +1,15 @@
+import { useState } from "react";
+import Image from "next/image";
+import Modal from "@/components/Modal";
 import Layout from "@/components/layout/Layout";
 import styles from "../../styles/guitars.module.css";
-import Image from "next/image";
-import { useState } from "react";
 
-const UrlGuitar = ({ guitar, addCart}) => {
+const UrlGuitar = ({ guitar, addCart, cart}) => {
+  
+  const [modal, setModal] = useState(false)
   const [amount, setAmount] = useState(Number(1));
   const { name, description, price, image } = guitar[0].attributes;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (amount < 1) {
@@ -20,11 +24,19 @@ const UrlGuitar = ({ guitar, addCart}) => {
       name,
     };
     addCart(selectedGuitar)
+    setModal(true)
   };
 
+  if (modal){
+    document.body.classList.add('modal')
+  } else if (!modal){
+    document.body.classList.remove('modal')
+  }
+
   return (
-    <Layout title={`${name} guitar`}>
-      <div className={styles.guitarra}>
+    <Layout cart={cart} title={`${name} guitar`}>
+      {modal? (<Modal setModal={setModal}/>) : <></>}
+      <div className={`${styles.guitarra}`}>
         <Image
           src={image.data.attributes.formats.medium.url}
           alt={`guitar img ${name}`}

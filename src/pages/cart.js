@@ -3,14 +3,14 @@ import Image from "next/image";
 import Layout from "@/components/layout/Layout";
 import styles from "../styles/cart.module.css";
 
-const Cart = ({ cart, updatedAmount }) => {
+const Cart = ({ cart, updatedAmount, deleteItem }) => {
   const [total, setTotal] = useState(0)
   useEffect(() =>{
     const calculated = cart.reduce((total, item)=> total + (item.amount * item.price), 0)
     setTotal(calculated)
   },[cart])
   return (
-    <Layout title="Shopping Cart">
+    <Layout cart={cart} title="Shopping Cart">
       <main className="contenedor">
         <h1 className="heading">Shopping Cart</h1>
         <div className={styles.contenido}>
@@ -54,6 +54,13 @@ const Cart = ({ cart, updatedAmount }) => {
                         SubTotal: $<span>{item.amount * item.price}</span>
                       </p>
                     </div>
+                    <button
+                      className={styles.eliminar}
+                      type="button"
+                      onClick={()=> deleteItem(item.id)}
+                    >
+                      x
+                    </button>
                   </div>
                 ))}
           </div>

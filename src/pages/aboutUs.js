@@ -2,9 +2,10 @@ import Layout from "@/components/layout/Layout";
 import Image from "next/image";
 import styles from "../styles/aboutUs.module.css"
 
-const AboutUs = () => {
+const AboutUs = ({cart}) => {
   return (
     <Layout
+    cart={cart}
       title={"About Us"}
       description={"About us, GuitarLA, online website for selling music"}
     >

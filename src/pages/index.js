@@ -5,10 +5,11 @@ import Posts from "@/components/fromApi/posts";
 import Courses from "@/components/fromApi/courses";
 import Layout from "@/components/layout/Layout";
 
-export default function Home({ guitars, posts, courses }) {
+export default function Home({cart, guitars, posts, courses }) {
   return (
     <>
       <Layout
+        cart={cart}
         title={"Home Page"}
         description={"Website about selling guitars, blogs of music and more"}
       >

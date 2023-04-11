@@ -5,10 +5,11 @@ import ListadoGuitarras from "@/components/fromApi/listado-guitarras";
 import styles from "../styles/grid.module.css"
 
 
-export default function Shop({ guitars }) {
+export default function Shop({ guitars, cart }) {
   return (
     <>
       <Layout
+        cart={cart}
         title={"Shopping page"}
         description={
           "Online Shopping website, instruments, guitars, guitar selling, guitarLA"

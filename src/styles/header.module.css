@@ -45,3 +45,16 @@
         gap: 2rem;
     }
 }
+
+.full{
+    position: relative;
+}
+.full span{
+    position: absolute;
+    left:15px;
+    top:-10px;
+    background-color: var(--primary);
+    border-radius: 100%;
+    font-size: 1rem;
+    padding: 0.2rem 0.6rem;
+}

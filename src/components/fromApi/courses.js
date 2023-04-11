@@ -2,7 +2,6 @@ import styles from "../../styles/curso.module.css";
 
 const Courses = ({ courses }) => {
   const { content, image, title } = courses;
-  console.log(courses);
   return (
     <section className={`${styles.curso} curso`}>
       <style jsx>

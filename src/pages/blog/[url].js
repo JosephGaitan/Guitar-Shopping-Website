@@ -3,10 +3,11 @@ import styles from "../../styles/blog.module.css"
 import Layout from "@/components/layout/Layout";
 import { formatDate } from "../../../utilities/helpers";
 
-const UrlPosts = ({posts}) => {
+const UrlPosts = ({posts,cart}) => {
     const {publishedAt, content, title, url, image} = posts[0].attributes
   return (
     <Layout
+    cart={cart}
         title={title}
     >
       <article className={`${styles.post} ${styles['mt-3']}`}>

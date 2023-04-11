@@ -4,6 +4,15 @@
   --white: #FFF;
   --fuente-principal: 'Outfit', sans-serif;
 }
+
+.cart{
+  color: red;
+}
+
+.modal{
+  overflow: hidden;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
