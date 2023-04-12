@@ -56,6 +56,7 @@ export default function App({ Component, pageProps }) {
   return ready ? (
     <Component
       {...pageProps}
+      setCart={setCart}
       cart={cart}
       addCart={addCart}
       deleteItem={deleteItem}

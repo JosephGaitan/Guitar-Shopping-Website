@@ -1,16 +1,35 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Layout from "@/components/layout/Layout";
+import Order from "@/components/Order";
 import styles from "../styles/cart.module.css";
 
-const Cart = ({ cart, updatedAmount, deleteItem }) => {
-  const [total, setTotal] = useState(0)
-  useEffect(() =>{
-    const calculated = cart.reduce((total, item)=> total + (item.amount * item.price), 0)
-    setTotal(calculated)
-  },[cart])
+const Cart = ({ setCart, cart, updatedAmount, deleteItem }) => {
+  const [total, setTotal] = useState(0);
+  const [order, setOrder] = useState(false);
+
+  const handlerClick = () => {
+    if (cart.length > 0) {
+      setOrder(true);
+    }
+  };
+
+  if (order) {
+    document.body.classList.add("modal");
+  } else if (!order) {
+    document.body.classList.remove("modal");
+  }
+
+  useEffect(() => {
+    const calculated = cart.reduce(
+      (total, item) => total + item.amount * item.price,
+      0
+    );
+    setTotal(calculated);
+  }, [cart]);
   return (
     <Layout cart={cart} title="Shopping Cart">
+      {order ? <Order setCart={setCart} setOrder={setOrder} /> : <></>}
       <main className="contenedor">
         <h1 className="heading">Shopping Cart</h1>
         <div className={styles.contenido}>
@@ -33,10 +52,12 @@ const Cart = ({ cart, updatedAmount, deleteItem }) => {
                       <div className={styles.amount}>
                         <p>Amount: {item.amount}</p>
                         <select
-                          onChange={e => updatedAmount({
-                            id: item.id,
-                            amount: e.target.value
-                          })}
+                          onChange={(e) =>
+                            updatedAmount({
+                              id: item.id,
+                              amount: e.target.value,
+                            })
+                          }
                           className={styles.select}
                           value={item.amount}
                         >
@@ -57,16 +78,27 @@ const Cart = ({ cart, updatedAmount, deleteItem }) => {
                     <button
                       className={styles.eliminar}
                       type="button"
-                      onClick={()=> deleteItem(item.id)}
+                      onClick={() => deleteItem(item.id)}
                     >
                       x
                     </button>
                   </div>
                 ))}
           </div>
-          <aside className={styles.summary}>
+          <aside id="aside" className={styles.summary}>
             <h3>Order summary</h3>
             <p>Total price: ${total}</p>
+            {cart.length > 0 ? (
+              <button
+                onClick={() => {
+                  handlerClick();
+                }}
+              >
+                Place Order
+              </button>
+            ) : (
+              <></>
+            )}
           </aside>
         </div>
       </main>
