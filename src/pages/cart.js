@@ -6,7 +6,7 @@ import styles from "../styles/cart.module.css";
 
 const Cart = ({ setCart, cart, updatedAmount, deleteItem }) => {
   const [total, setTotal] = useState(0);
-  const [order, setOrder] = useState(false);
+  const [useOrder, setOrder] = useState(false);
 
   const handlerClick = () => {
     if (cart.length > 0) {
@@ -14,9 +14,9 @@ const Cart = ({ setCart, cart, updatedAmount, deleteItem }) => {
     }
   };
 
-  if (order) {
+  if (useOrder) {
     document.body.classList.add("modal");
-  } else if (!order) {
+  } else if (!useOrder) {
     document.body.classList.remove("modal");
   }
 
@@ -29,7 +29,7 @@ const Cart = ({ setCart, cart, updatedAmount, deleteItem }) => {
   }, [cart]);
   return (
     <Layout cart={cart} title="Shopping Cart">
-      {order ? <Order setCart={setCart} setOrder={setOrder}/> : <></>}
+      {useOrder ? <Order setCart={setCart} setOrder={setOrder}/> : <></>}
       <main className="contenedor">
         <h1 className="heading">Shopping Cart</h1>
         <div className={styles.contenido}>
