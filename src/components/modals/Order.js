@@ -1,11 +1,23 @@
-import React from 'react'
+import styles from "../../styles/order.module.css"
+import Link from "next/link";
 
-const Order = () => {
+const Order = ({setCart, setOrder}) => {
+  const handlerClose = () => {
+    setOrder(false);
+    setCart([]);
+  };
   return (
-    <div>
-      hola div
+    <div className={styles.modal}>
+      <div className={styles.cuadro}>
+        <p> Order succesfully placed, thank you for buying</p>
+        <div className={styles.buttons}>
+          <Link href={"/shop"}>
+            <button onClick={() => handlerClose()}>Close</button>
+          </Link>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Order
+export default Order;

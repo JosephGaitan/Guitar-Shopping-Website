@@ -29,7 +29,7 @@ const Cart = ({ setCart, cart, updatedAmount, deleteItem }) => {
   }, [cart]);
   return (
     <Layout cart={cart} title="Shopping Cart">
-      {order ? <Order setCart={setCart} setOrder={setOrder} /> : <></>}
+      {order ? <Order setCart={setCart} setOrder={setOrder}/> : <></>}
       <main className="contenedor">
         <h1 className="heading">Shopping Cart</h1>
         <div className={styles.contenido}>
