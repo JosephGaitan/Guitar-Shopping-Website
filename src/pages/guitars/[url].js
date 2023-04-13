@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Image from "next/image";
-import Modal from "@/components/Modal";
+import Modal from "@/components/modals/Modal";
 import Layout from "@/components/layout/Layout";
 import styles from "../../styles/guitars.module.css";
 
 const UrlGuitar = ({ guitar, addCart, cart}) => {
   
-  const [modal, setModal] = useState(false)
+  const [useModal, setModal] = useState(false)
   const [amount, setAmount] = useState(Number(1));
   const { name, description, price, image } = guitar[0].attributes;
 
@@ -27,15 +27,15 @@ const UrlGuitar = ({ guitar, addCart, cart}) => {
     setModal(true)
   };
 
-  if (modal){
+  if (useModal){
     document.body.classList.add('modal')
-  } else if (!modal){
+  } else if (!useModal){
     document.body.classList.remove('modal')
   }
 
   return (
     <Layout cart={cart} title={`${name} guitar`}>
-      {modal? (<Modal setModal={setModal}/>) : <></>}
+      {useModal? (<Modal setModal={setModal}/>) : <></>}
       <div className={`${styles.guitarra}`}>
         <Image
           src={image.data.attributes.formats.medium.url}
@@ -82,7 +82,7 @@ export async function getStaticPaths() {
 
     return {
       paths,
-      fallback: false,
+      fallback: false
     };
   } catch (error) {
     console.error("error in the paths", error);

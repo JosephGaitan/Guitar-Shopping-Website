@@ -49,6 +49,21 @@
     border-radius: 1rem;
     position: sticky;
     top: 3rem;
+   
+}
+.summary button{
+    padding: 1.2rem;
+    width: 100%;
+    background-color: var(--black);
+    border: none;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+.summary button:hover{
+    transition-property: background-color;
+    background-color: var(--primary);
+    transition-duration: 300ms;
 }
 .select{
     all: unset;
