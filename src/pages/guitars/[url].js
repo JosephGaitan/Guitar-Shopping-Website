@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import Modal from "@/components/modals/Modal";
+import Modal from "@/components/modals/modal";
 import Layout from "@/components/layout/Layout";
 import styles from "../../styles/guitars.module.css";
 
@@ -82,7 +82,7 @@ export async function getStaticPaths() {
 
     return {
       paths,
-      fallback: false,
+      fallback: false
     };
   } catch (error) {
     console.error("error in the paths", error);
