@@ -1,6 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/modal.module.css";
-Link;
+import styles from "../../styles/modal.module.css";
 
 const Modal = ({ setModal }) => {
   return (

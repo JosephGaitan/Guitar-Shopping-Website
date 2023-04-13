@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Layout from "@/components/layout/Layout";
-import Order from "@/components/Order";
+import Order from "@/components/modals/Order";
 import styles from "../styles/cart.module.css";
 
 const Cart = ({ setCart, cart, updatedAmount, deleteItem }) => {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import Modal from "@/components/Modal";
+import Modal from "@/components/modals/Modal";
 import Layout from "@/components/layout/Layout";
 import styles from "../../styles/guitars.module.css";
 
